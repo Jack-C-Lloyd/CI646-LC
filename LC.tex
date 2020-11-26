@@ -1,0 +1,30 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+\begin{document}
+\[\text{true}\equiv\lambda x.\lambda y.x\]
+\[\text{false}\equiv\lambda x.\lambda y.y\]
+\newline
+\[\text{not}\equiv\lambda x.x\ \text{false true}\]
+\newline
+\[\text{not true}\to(\lambda x.x\ \text{false true})\ \text{true}\to\text{true false true}\to(\lambda x.\lambda y.x)\ \text{false true}\to\text{false}\]
+\[\text{not false}\to(\lambda x.x\ \text{false true})\ \text{false}\to\text{false false true}\to(\lambda x.\lambda y.y)\ \text{false true}\to\text{true}\]
+\newline
+\[\text{and}\equiv\lambda x.\lambda y.x\ y\ x\]
+\newline
+\[\text{and true false}\to(\lambda x.\lambda y.x\ y\ x)\ \text{true false}\to\text{true false true}\to(\lambda x.\lambda y.x)\ \text{false true}\to\text{false}\]
+\[\text{and false true}\to(\lambda x.\lambda y.x\ y\ x)\ \text{false true}\to\text{false true false}\to(\lambda x.\lambda y.y)\ \text{true false}\to\text{false}\]
+\[\text{and true true}\to(\lambda x.\lambda y.x\ y\ x)\ \text{true true}\to\text{true true true}\to(\lambda x.\lambda y.x)\ \text{true true}\to\text{true}\]
+\[\text{and false false}\to(\lambda x.\lambda y.x\ y\ x)\ \text{false false}\to\text{false false false}\to(\lambda x.\lambda y.y)\ \text{false true}\to\text{false}\]
+\newline
+\[\text{nand}\equiv\lambda x.\lambda y.\text{not}(\text{and}\ x\ y)\]
+\newline
+\[\text{or}\equiv\lambda x.\lambda y.x\ x\ y\]
+\newline
+\[\text{or true false}\to(\lambda x.\lambda y.x\ x\ y)\ \text{true false}\to\text{true true false}\to(\lambda x.\lambda y.x)\ \text{true false}\to\text{true}\]
+\[\text{or false true}\to(\lambda x.\lambda y.x\ x\ y)\ \text{false true}\to\text{false false true}\to(\lambda x.\lambda y.y)\ \text{false true}\to\text{true}\]
+\[\text{or true true}\to(\lambda x.\lambda y.x\ x\ y)\ \text{true true}\to\text{true true true}\to(\lambda x.\lambda y.x)\ \text{true true}\to\text{true}\]
+\[\text{or false false}\to(\lambda x.\lambda y.x\ x\ y)\ \text{false false}\to\text{false false false}\to(\lambda x.\lambda y.y)\ \text{false false}\to\text{false}\]
+\newline
+\[\text{nor}\equiv\lambda x.\lambda y.\text{not}(\text{or}\ x\ y)\]
+\end{document}
